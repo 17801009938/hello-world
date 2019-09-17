@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bootstrap-js/jquery.min.js"></script>
+    <script src="../jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="../jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="../jquery-easyui-1.5/themes/default/easyui.css">
+    <link rel="stylesheet" href="../jquery-easyui-1.5/themes/icon.css">
+    <script src="../js/add.js"></script>
+</head>
+<body>
+填写工单信息：
+<form method="post" id="addFormre">
+    <table border="0" id="xztable">
+        <tr>
+            <td>回收地址</td>
+            <td><input type="text"  class="easyui-textbox" name="arrdess"></td>
+        </tr>
+        <tr>
+            <td>联系人</td>
+            <td><input type="text" class="easyui-textbox" name="person"></td>
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td><input type="text" class="easyui-textbox" name="telNumber"></td>
+        </tr>
+        <tr>
+            <td>回收时间</td>
+            <td>
+                <select   name="reTime">
+                    <option value="1">尽快来取</option>
+                    <option value="2">周六周日取</option>
+                    <option value="3">两日后来取</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>回收物品：</td>
+            <td>点击添加</td>
+        </tr>
+
+        <tr>
+            <td>垃圾类型</td>
+            <td>
+                <select id="lajileixxing" name="regoods[0].retype">
+                    <option value="1">干垃圾</option>
+                    <option value="2">是垃圾</option>
+                    <option value="3">有害垃圾</option>
+                    <option value="4">可回收垃圾</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>名称</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[0].reName"></td>
+        </tr>
+        <tr>
+            <td>单位</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[0].unit"></td>
+        </tr>
+        <tr>
+            <td>数量</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[0].count"></td>
+        </tr>
+
+        <tr>
+            <td>垃圾类型</td>
+            <td>
+                <select id="lajileixxingtwo" name="regoods[1].retype">
+                    <option value="1">干垃圾</option>
+                    <option value="2">是垃圾</option>
+                    <option value="3">有害垃圾</option>
+                    <option value="4">可回收垃圾</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>名称</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[1].reName"></td>
+        </tr>
+        <tr>
+            <td>单位</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[1].unit"></td>
+        </tr>
+        <tr>
+            <td>数量</td>
+            <td><input type="text" class="easyui-textbox"  name="regoods[1].count"></td>
+        </tr>
+        <tr>
+            <td> <a class="easyui-linkbutton" onclick="tijiao()" >提交 </a> </td>
+
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>

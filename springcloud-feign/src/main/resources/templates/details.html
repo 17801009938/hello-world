@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bootstrap-js/jquery.min.js"></script>
+    <script src="../bootstrap-js/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../bootstrap-js/css/bootstrap.css">
+    <script src="../bootstrap-js/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../bootstrap-js/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <link rel="stylesheet" href="../bootstrap-js/bootstrap-table/bootstrap-table.css">
+    <script src="../js/details.js"></script>
+</head>
+<body>
+<input type="button" onclick="result()" value="返回"><center><h1 color="red">金科垃圾回收系统终端</h1></center>
+<div class="container-fluid">
+    <form id="bookForm" class="form-horizontal">
+        <div class="form-group">
+            <label for="orderNum" class="col-sm-2 control-label">回收编号</label>
+            <div class="col-sm-4">
+                <!--<input type="text" style="display: none;" id="bookid" name="id">-->
+                <input type="text" class="form-control" id="orderNum" name="name">
+            </div>
+            <label for="status" class="col-sm-2 control-label">工单状态</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="status" name="price">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="commitDate" class="col-sm-2 control-label">下单时间</label>
+            <div class="col-sm-4">
+                <input class="form-control" id="commitDate" name="typeid">
+            </div>
+            <label for="reTime" class="col-sm-2 control-label">预约时间</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="reTime" name="author">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="regoods" class="col-sm-2 control-label">回收物品</label>
+            <div class="col-sm-10">
+                <table id="regoods" border="1">
+                </table>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address" class="col-sm-2 control-label">回收地址</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="address" name="cityid">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="person" class="col-sm-2 control-label">联系人</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="person">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="telNumber" class="col-sm-2 control-label">联系电话</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="telNumber">
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.map.RecoverMap">
+
+    <select id="queryReorderCount" resultType="int" parameterType="map">
+        select count(*) from reorder <include refid="orderSql"></include>
+    </select>
+    <select id="queryReorderList" resultType="com.jk.pojo.Reorder" parameterType="map">
+        select * from reorder
+        <include refid="orderSql"></include>
+        LIMIT #{startIndex},#{endIndex}
+    </select>
+
+    <sql id="orderSql">
+        <where>
+            <if test="reorder.orderNum!=null and reorder.orderNum!=''">
+                and orderNum = #{reorder.orderNum}
+            </if>
+            <if test="reorder.person!=null and reorder.person!=''">
+                and person = #{reorder.person}
+            </if>
+            <if test="reorder.startDate!=null and reorder.startDate!=''">
+                and commitDate >= #{reorder.startDate}
+            </if>
+            <if test="reorder.endDate!=null and reorder.endDate!=''">
+                and commitDate &lt;= #{reorder.startDate}
+            </if>
+        </where>
+    </sql>
+    <insert id="saveReorder" parameterType="com.jk.pojo.Reorder" keyColumn="orderId" useGeneratedKeys="true" keyProperty="orderId">
+        INSERT reorder(orderNum,person,telNumber,reTime,status,commitDate,address)
+        VALUES(#{orderNum},#{person},#{telNumber},#{reTime},#{status},Now(),#{address})
+    </insert>
+    <insert id="saveRegoods" parameterType="com.jk.pojo.ReGoods" keyColumn="goodsId" useGeneratedKeys="true" keyProperty="goodsId">
+        INSERT into regoods(retype,unit,count,orderId) VALUES
+        <foreach collection="list" item="regoods" separator=",">
+            (#{regoods.retype},#{regoods.unit},#{regoods.count},#{regoods.orderId})
+        </foreach>
+    </insert>
+</mapper>
